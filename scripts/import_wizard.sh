@@ -8,6 +8,9 @@
 # @package: Emiga
 # @author:  http://cwsoft.de
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Ignore null values in globing (e.g. /*).
+shopt -s nullglob
+
 # Set scan dir to users media mount path.
 SCAN_DIR="/media/`whoami`"
 DESKTOP_DIR="$HOME/Desktop"
@@ -55,7 +58,6 @@ fi
 ########################################################################
 ## STEP 3: Create list of files to import or extract.
 ########################################################################
-shopt -s nullglob
 kickstarts=("$sourceDir/kickstarts"/*.*)
 nbrKickstarts=${#kickstarts[@]}
 

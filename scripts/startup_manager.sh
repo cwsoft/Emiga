@@ -9,6 +9,9 @@
 # @package: Emiga
 # @author:  http://cwsoft.de
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Ignore null values in globing (e.g. /*).
+shopt -s nullglob
+
 # Set bash window title using escape sequences.
 title="Emiga Startup Manager"
 echo -e '\033]2;'$title'\007'
@@ -22,7 +25,7 @@ fi
 
 # Create whiptail radiolist template as bash array.
 nbrListItems=1
-declare -a template=(
+template=(
    --title "Emiga Startup Manager"
    --radiolist "Select preferred startup mode:" 
    20 78 $nbrListItems
@@ -47,6 +50,14 @@ for uaeConfig in $HOME/Emiga/public/configs/*.uae; do
    template+=("${uaeDisplayName}" "Startup Amiberry [$uaeConfigFile]" "$selected")  
    let nbrListItems="nbrListItems=nbrListItems+1"
 done
+
+# Quit if no user provided Amiberry config file yet exists.
+if [[ $nbrListItems == 1 ]]; then
+   whiptail --msgbox --title "Emiga Startup Manager" \
+   "No Amiberry config (.uae) found in '$HOME/Emiga/public/configs/'."` \
+   `"\nBooting into Linux LXDE Desktop on next startup." 8 78
+   exit 0
+fi
 
 # Adapt radiolist item count to reflect optional available Amiberry configs.
 declare template[6]=$nbrListItems
