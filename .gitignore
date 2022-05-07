@@ -1,0 +1,11 @@
+# Exclude thirdparty files and stuff under copyright.
+/amiberry/
+/downloads/
+/emulations/
+/public/
+
+# Exclude user provided emulation setup icons from assets folder.
+/assets/icons/*
+!/assets/icons/amiberry.png
+!/assets/icons/import_wizard.png
+!/assets/icons/startup_manager.png
