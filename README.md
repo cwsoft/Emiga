@@ -35,6 +35,10 @@ After the initial Emiga setup, you will find three icons on your Linux Desktop:
 - **StartManager**: Define setup started after boot-up (Default: LXDE Linux Desktop)
 - **ImportWizard**: Import custom ROMs and setups from USB (e.g. Workbench 3.x, AmiKit, Pimiga)
 
+The collage below shows how a customized Emiga setup with various differen Amiga emulation setups may look like. My custom setup includes my own EmigaOS 3.2.1 Workbench setup, AmiKitXE and a customized Pimiga2-Light version.
+
+![Screenshot](./assets/screenshots/emiga_custom_setup_collage.png)
+
 Sections below explain how to setup your own Workbench or port an existing [AmiKit](https://www.amikit.amiga.sk) or [Pimiga](https://youtube.com/watch?v=KLJk8fTjQLw) setup over to Emiga.
 
 ### D1: Create your own Workbench Setup
