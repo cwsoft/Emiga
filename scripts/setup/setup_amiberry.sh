@@ -52,7 +52,7 @@ if [[ ! -d $EMIGA_DIR/amiberry ]]; then
    status
 
    ## Check if Amiberry files and folders are contained in a subfolder.
-   if [[ ! -f $EMIGA_DIR/amiberry/amiberry || ! $EMIGA_DIR/amiberry/conf ]]; then
+   if [[ ! -f $EMIGA_DIR/amiberry/amiberry ]]; then
       printf "~> Adapt Amiberry folder structure... "
       mv $EMIGA_DIR/amiberry/*/* $EMIGA_DIR/amiberry/ > /dev/null 2>&1
       rm -r $EMIGA_DIR/amiberry/amiberry*/ > /dev/null 2>&1
