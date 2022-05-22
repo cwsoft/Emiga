@@ -1,5 +1,5 @@
 # Emiga - Emulated Amiga for Pi4/400
-This repo allows you to create an emulated Amiga environment (Emiga) on your Pi 4/400 on top of a clean [RPiOS-64 LXDE Desktop](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-64-bit) installation. The setup installs the required apt packages, [Amiberry v5.1 (SDL2)](https://github.com/midwan/amiberry), sets-up a Samba server for easier data exchange (`\\emiga` on Windows) and adds some desktop icons and a Amiga wallpaper to your RPiOS-64 LXDE Desktop.
+This repo allows you to create an emulated Amiga environment (Emiga) on your Pi 4/400 on top of a clean [RPiOS-64 LXDE Desktop](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-64-bit) installation. The setup installs the required apt packages, [Amiberry v5.2 (SDL2)](https://github.com/midwan/amiberry), sets-up a Samba server for easier data exchange (`\\emiga` on Windows) and adds some desktop icons and a Amiga wallpaper to your RPiOS-64 LXDE Desktop.
 
 ![Screenshot](./assets/screenshots/emiga_env.png)
 
@@ -31,7 +31,7 @@ git clone https://github.com/cwsoft/Emiga.git
 ```
 ## D: Customize your Emiga Setup
 After the initial Emiga setup, you will find three icons on your Linux Desktop:
-- **Amiberry**: Open [Amiberry v5.1 (SDL2)](https://github.com/midwan/amiberry) GUI to create/modify your Amiga setups
+- **Amiberry**: Open [Amiberry v5.2 (SDL2)](https://github.com/midwan/amiberry) GUI to create/modify your Amiga setups
 - **StartManager**: Define setup started after boot-up (Default: LXDE Linux Desktop)
 - **ImportWizard**: Import custom ROMs and setups from USB (e.g. Workbench 3.x, AmiKit, Pimiga)
 
