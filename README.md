@@ -1,5 +1,5 @@
 # Emiga - Emulated Amiga for Pi4/400
-This repo allows you to create an emulated Amiga environment (Emiga) on your Pi 4/400 on top of a clean [RPiOS-64 LXDE Desktop](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-64-bit) installation. The setup installs the required apt packages, [Amiberry v5.2 (SDL2)](https://github.com/midwan/amiberry), sets-up a Samba server for easier data exchange (`\\emiga` on Windows) and adds some desktop icons and a Amiga wallpaper to your RPiOS-64 LXDE Desktop.
+This repo allows you to create an emulated Amiga environment (Emiga) on your Pi 4/400 on top of a clean [RPiOS-64 LXDE Desktop](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-64-bit) installation to host all your custom Amiga setups on a single SD card. The setup installs the required apt packages, [Amiberry v5.2 (SDL2)](https://github.com/midwan/amiberry), sets-up a Samba server for easier data exchange (`\\emiga` on Windows) and adds some desktop icons and a Amiga wallpaper to your RPiOS-64 LXDE Desktop.
 
 ![Screenshot](./assets/screenshots/emiga_env.png)
 
@@ -35,7 +35,7 @@ After the initial Emiga setup, you will find three icons on your Linux Desktop:
 - **StartManager**: Define setup started after boot-up (Default: LXDE Linux Desktop)
 - **ImportWizard**: Import custom ROMs and setups from USB (e.g. Workbench 3.x, AmiKit, Pimiga)
 
-The collage below shows my customized Emiga setup including my own EmigaOS 3.2.1 Workbench setup, a ported versions of my purchased [AmiKitXE](https://www.amikit.amiga.sk) setup and a light version of [Pimiga2](https://youtube.com/watch?v=KLJk8fTjQLw) without Musics and Demos on a single 32 GB SD card.
+The collage below shows my customized Emiga setup including my own EmigaOS 3.2.1 Workbench setup, ports of my purchased [AmiKitXE](https://www.amikit.amiga.sk) and [AmigaOS-32-SE](https://www.youtube.com/watch?v=p0AUsKNsFFo&list=PLPPMLgyyaMutm5waSlND4w-01SHVCbZwt&index=5) versions and a light version of [Pimiga 2](https://youtube.com/watch?v=KLJk8fTjQLw) without Musics and Demos on a single 32 GB SD card.
 
 ![Screenshot](./assets/screenshots/emiga_custom_setup_collage.png)
 
