@@ -10,9 +10,9 @@
 # @author:  http://cwsoft.de
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Global variables to define the Amiberry binary file to download.
-GH_URL="https://github.com/midwan/amiberry/releases/download"
-AMIBERRY_VERSION="v5.2"
-AMIBERRY_BINARY="amiberry-$AMIBERRY_VERSION-rpi4-sdl2-64bit-rpios.zip"
+GH_URL="https://github.com/BlitterStudio/amiberry/releases/download"
+AMIBERRY_VERSION="v5.3"
+AMIBERRY_BINARY="amiberry-$AMIBERRY_VERSION-rpi4-sdl2-64bit-debian.zip"
 AMIBERRY_URL="$GH_URL/$AMIBERRY_VERSION/$AMIBERRY_BINARY"
 
 header "Executing: 'setup_amiberry.sh'"
