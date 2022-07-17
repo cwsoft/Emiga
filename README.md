@@ -1,5 +1,5 @@
 # Emiga - Emulated Amiga for Pi4/400
-This repo allows you to create an emulated Amiga environment (Emiga) on your Pi 4/400 on top of a clean [RPiOS-64 LXDE Desktop](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-64-bit) installation to host all your custom Amiga setups on a single SD card. The setup installs the required apt packages, [Amiberry v5.3 (SDL2)](https://github.com/BlitterStudio/amiberry), sets-up a Samba server for easier data exchange (`\\emiga` on Windows) and adds some desktop icons and a Amiga wallpaper to your RPiOS-64 LXDE Desktop.
+This repo allows you to create an emulated Amiga environment (Emiga) on your Pi 4/400 on top of a clean [RPiOS-64 LXDE Desktop](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-64-bit) installation to host all your custom Amiga setups on a single SD card. The setup installs the required apt packages, [Amiberry v5.3 (SDL2)](https://github.com/BlitterStudio/amiberry), sets-up a Samba server (`\\emiga`) for easier data exchange and adds some desktop icons and a Amiga wallpaper to your RPiOS-64 LXDE Desktop.
 
 ![Screenshot](./assets/screenshots/emiga_env.png)
 
@@ -68,14 +68,14 @@ Icon={HOME}/Emiga/assets/icons/{EMULATION_PNG} -> e.g. amikit.png
 
 **Please note:** When starting a new or ported Amiga setup the very first time, the screen mode needs to be adapted for a nice user experience. In Pimiga2, the screen mode can be set via `System:Prefs/ScreenMode`. All Workbench setups include the `ScreenMode` tool to set a proper resultion like 32-bit 1920x1080 px.
 
-### D2: Porting Pimiga2 to Emiga
+### D2: Port Pimiga 2 to Emiga
 **Note:** It's assumed you already have [Pimiga 2](https://youtube.com/watch?v=KLJk8fTjQLw) up and running on your Pi4/400 incl. a stable internet connection.
 
-1. Format a fast 64-GB USB 3.2 stick with `exFat` file format on your computer (e.g. Windows)
-2. Plug formated USB stick into your Pi, then boot-up your Pimiga2 setup from SD-Card
-3. Quit out of Pimiga Scalos Workbench via `(F12 -> Quit)`
-4. Ensure formated USB stick was mounted correctly during boot-up. Enter `ls /media` and check for the mount-points: `usb` and `kick`.
-5. Then enter following commands to copy Pimiga2 to your USB stick:
+1. Format a fast 64-GB USB 3.2 stick with `exFat` on your computer
+2. Plug formated USB stick into your Pi, then boot Pimiga 2 from SD
+3. Quit Pimiga Scalos Workbench via `(F12 -> Quit)`
+4. Enter `ls /media` and check if mount-points: `usb` and `kick` exists
+5. Enter following commands to copy Pimiga 2 to your USB stick:
    ```
    # Install zip command (requires LAN/WLAN internet connection)
    sudo apt install zip
@@ -95,11 +95,11 @@ Icon={HOME}/Emiga/assets/icons/{EMULATION_PNG} -> e.g. amikit.png
    ```
 6. Shutdown your Pi via `sudo shutdown now`, eject Pimiga SD-Card and plug in Emiga SD-Card, then reboot
 7. Copy a nice PNG icon (e.g. PI-symbol) to the USB stick: `emiga/emulations/pimiga/pimiga.png`
-8. Run Emigas `ImportWizard` and import Pimiga2 from the prepared USB stick
+8. Run Emigas `ImportWizard` and import Pimiga 2 from the prepared USB stick
 9. Click the desktop icon from Step 7 and adjust screen mode on first start via `System:Prefs\ScreenMode`
 
 ### D3: Setup USB Stick for the ImportWizard
-As outlined in **Section D2**, porting over any existing Amiga setup to Emiga is just a matter of copying some folders and files to an empty USB stick and to adapt some pathes in the WinUAE/Amiberry configuration files. The Emiga *ImportWizard* expects a certain file structure on your USB stick in order to recognize your setup as outlined below:
+As outlined in **Section D2**, porting over any existing Amiga setup to Emiga is just a matter of copying some files and folders to an empty USB stick and to adapt some pathes in the WinUAE/Amiberry configuration files. The Emiga *ImportWizard* expects a certain file structure on your USB stick in order to recognize your setup as outlined below:
 ```
 emiga/
   kickstarts/
