@@ -21,6 +21,7 @@ This repo allows you to create an emulated Amiga environment (Emiga) on your Pi 
    - Setup WiFi (choose network, enter credentials)
    - Download system updates
    - Reboot your Pi
+6. Open FileManager (pcmanfm), open Settings dialog (creates default config), then quit file manager
 
 ## C: Setup Emiga on your Pi4/400
 Open a terminal and execute the following commands. Reboot your Pi afterwards to apply any pending Emiga settings.
@@ -68,7 +69,7 @@ Icon={HOME}/Emiga/assets/icons/{EMULATION_PNG} -> e.g. amikit.png
 
 **Please note:** When starting a new or ported Amiga setup the very first time, the screen mode needs to be adapted for a nice user experience. In Pimiga2, the screen mode can be set via `System:Prefs/ScreenMode`. All Workbench setups include the `ScreenMode` tool to set a proper resultion like 32-bit 1920x1080 px.
 
-### D2: Port Pimiga 2 to Emiga
+### D2: Port Pimiga to Emiga
 **Note:** It's assumed you already have [Pimiga 2](https://youtube.com/watch?v=KLJk8fTjQLw) up and running on your Pi4/400 incl. a stable internet connection.
 
 1. Format a fast 64-GB USB 3.2 stick with `exFat` on your computer
