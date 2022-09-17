@@ -9,7 +9,12 @@
 # @package: Emiga
 # @author:  http://cwsoft.de
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Global variables to define the Amiberry binary file to download.
+## Include required globals and helper functions if needed.
+if [[ -z "$EMIGA_DIR" ]]; then 
+   source "$HOME/Emiga/scripts/setup/helper.sh"
+fi
+
+## Global variables to define the Amiberry binary file to download.
 GH_URL="https://github.com/BlitterStudio/amiberry/releases/download"
 AMIBERRY_VERSION="v5.3"
 AMIBERRY_BINARY="amiberry-$AMIBERRY_VERSION-rpi4-sdl2-64bit-debian.zip"

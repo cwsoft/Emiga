@@ -7,9 +7,12 @@
 # @package: Emiga
 # @author:  http://cwsoft.de
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Global variable.
+# Define global variables used in Emiga setup scripts.
+# Note: Desktop dir is adapted at end of this script.
+EMIGA_DIR="$HOME/Emiga"
 DESKTOP_DIR="$HOME/Desktop"
 
+#---------------------- HELPER ROUTINES BELOW --------------------------
 exitScriptIfInvokedByRoot() {
    ## Don't proceed if script is called via root/sudo.
    if [[ `whoami` == "root" ]]; then
@@ -76,3 +79,5 @@ setDesktopDir() {
    fi
 }
 
+## Set $DESKTOP_DIR depending on Linux distribution or users local.
+setDesktopDir

@@ -8,22 +8,18 @@
 # @package: Emiga
 # @author:  http://cwsoft.de
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Include required globals and helper functions.
+source "$HOME/Emiga/scripts/setup/helper.sh"
+
 # Ignore null values in globing (e.g. /*).
 shopt -s nullglob
 
 # Set scan dir to users media mount path.
 SCAN_DIR="/media/`whoami`"
-DESKTOP_DIR="$HOME/Desktop"
 
 # Set bash window title using escape sequences.
 title="Emiga Import Wizard"
 echo -e '\033]2;'$title'\007'
-
-# Include helper functions.
-source $HOME/Emiga/scripts/setup/helper.sh
-
-## Set $DESKTOP_DIR depending on Linux distribution or users local.
-setDesktopDir
 
 ########################################################################
 ## STEP 1: Ask user to plug in USB drive with data to import.

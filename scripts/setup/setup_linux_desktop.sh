@@ -8,6 +8,11 @@
 # @package: Emiga
 # @author:  http://cwsoft.de
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## Include required globals and helper functions if needed.
+if [[ -z "$EMIGA_DIR" ]]; then 
+   source "$HOME/Emiga/scripts/setup/helper.sh"
+fi
+
 header "Executing: 'setup_linux_desktop.sh'"
 
 ## Check if $DESKTOP_DIR exists inside users home folder.

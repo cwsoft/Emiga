@@ -9,22 +9,15 @@
 # @package: Emiga
 # @author:  http://cwsoft.de
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## Define some globals.
-EMIGA_DIR="$HOME/Emiga"
-DESKTOP_DIR="$HOME/Desktop"
-
-## Include helper functions.
-source "$EMIGA_DIR/scripts/setup/helper.sh"
+## Include required globals and helper functions.
+source "$HOME/Emiga/scripts/setup/helper.sh"
 
 ## Don't proceed if script is called as root/sudo.
 exitScriptIfInvokedByRoot
 
-## Set $DESKTOP_DIR depending on Linux distribution or users local.
-setDesktopDir
-
 ## Main script starts here.
 clear
-header "Emiga main setup script (v0.5.0)" "="
+header "Emiga main setup script (v0.6.0)" "="
 echo "Executing Emiga main setup script. Time for some coffee."
 
 ## Install required apt packages.
@@ -51,8 +44,10 @@ case "$input" in
       ;;
    *)
       printf "\nNote: First reboot may take up to 90s.\n"
-      printf "Rebooting in 5s from now."
-      sleep 5
+      for i in {5..1}; do 
+         echo -n -e "\\rRebooting system in $i s" && sleep 1
+      done
+      echo -e "\\rRebooting system now     "
       sudo reboot
       ;;
 esac
