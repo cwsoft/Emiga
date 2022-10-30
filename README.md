@@ -17,12 +17,12 @@ Note: Image showing an older RPiOS LXDE desktop and Amiberry version
 3. Flash image on an empty SD card using e.g. [Raspberry Pi Imager](https://www.raspberrypi.com/software/) or [balenaEtcher](https://www.balena.io/etcher/)
 4. Boot your Pi from the flashed SD card
 5. Follow initial RPiOS-64 desktop setup:
-   - Set country, language and timezone
+   - Set country, language, timezone and check screen resolution
    - Create a new user account (no space in name)
    - Setup WiFi (choose network, enter credentials)
    - Download system updates
    - Reboot your Pi
-6. Open FileManager (pcmanfm), open Settings dialog (creates default config), then quit file manager
+6. Open FileManager -> Settings (creates config file), then close app
 
 ## C: Setup Emiga on your Pi4/400
 Open a terminal and execute the following commands. Reboot your Pi afterwards to apply any pending Emiga settings.
