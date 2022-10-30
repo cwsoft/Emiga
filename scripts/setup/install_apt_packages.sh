@@ -20,8 +20,8 @@ sudo apt-get update > /dev/null 2>&1
 status
 
 ## Install APT packages required by Emiga
-printf "~> Emiga: 'bash, grep, sed, samba, samba-common-bin, unzip, whiptail, wmctrl'... "
-sudo apt-get -y install bash grep sed samba samba-common-bin unzip whiptail wmctrl > /dev/null 2>&1
+printf "~> Emiga: 'bash, grep, sed, samba, samba-common-bin, 7z, unzip, whiptail, wmctrl'... "
+sudo apt-get -y install bash grep sed samba samba-common-bin p7zip-full unzip whiptail wmctrl > /dev/null 2>&1
 status
 
 ## Install apt packages required by Amiberry

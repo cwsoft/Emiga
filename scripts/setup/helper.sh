@@ -43,6 +43,22 @@ section() {
    echo "## SECTION: $1"
 }
 
+print_status() {
+   # Prints [OK] or [FAILED] depending on optional argument.  
+   status=${1:-0}
+
+   # ANSI codes to modify text color.
+   clear='\033[0m'
+   red='\033[1;31m'
+   green='\033[1;32m'
+
+   if [[ "$status" -eq 0 ]]; then
+      echo -e "${green}[OK]${clear}";
+   else
+      echo -e "${red}[FAILED]${clear}";
+   fi
+}
+
 status() {
    # Check status of last command or from optional argument.
    # Example: check_status 0 [OK], check_status -1 [FAILED]
@@ -50,19 +66,15 @@ status() {
    # Capture exit code of last executed command.
    status=$?
 
-   # ANSI codes to modify text color.
-   clear='\033[0m'
-   red='\033[1;31m'
-   green='\033[1;32m'
-
    # Overwrite status with optional function parameter.
    if [[ $# -gt 0 ]]; then status="$1"; fi
 
-   if [[ "$status" -eq 0 ]]; then
-      echo -e "${green}[OK]${clear}";
-   else
-      echo -e "${red}[FAILED]${clear}";
-      exit $status
+   # Print status message to console.
+   print_status $status
+
+   # Exit further command execution on failure.
+   if [[ "$status" -ne 0 ]]; then 
+      exit status;
    fi
 }
 

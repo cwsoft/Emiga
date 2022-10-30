@@ -53,7 +53,8 @@ fi
 ## Extract amiberry archive if no amiberry folder yet exists.
 if [[ ! -d $EMIGA_DIR/amiberry ]]; then
    printf "~> Extracting '$AMIBERRY_BINARY' -> '$EMIGA_DIR/amiberry/'... "
-   unzip -q "$EMIGA_DIR/downloads/$AMIBERRY_BINARY" -d "$EMIGA_DIR/amiberry" > /dev/null 2>&1
+   # Extract Amiberry (-aos:skip existings files, -bso0: minimal progress bar)
+   7za x -aos -bso0 "$EMIGA_DIR/downloads/$AMIBERRY_BINARY" -o"$EMIGA_DIR/amiberry"
    status
 
    ## Check if Amiberry files and folders are contained in a subfolder.

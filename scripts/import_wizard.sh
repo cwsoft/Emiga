@@ -127,10 +127,23 @@ for file in ${emulations[@]}; do
    fi
 
    # Extract mandatory emulation zip file.
+   echo "~> Extracting '$folderName.zip' -> $HOME/Emiga/emulations... "
+   # Extract emulation archive (-aos:skip existings files, -bso0: minimal progress)
+   7za x -aos -bso0 "$file/$folderName.zip" -o"$HOME/Emiga/emulations"
+   extraction=$?
+
+   # Delete previous command line output and show extraction status.
+   printf '\e[A\e[K'
    printf "~> Extracting '$folderName.zip' -> $HOME/Emiga/emulations... "
-   unzip -q -n "$file/$folderName.zip" -d "$HOME/Emiga/emulations" > /dev/null 2>&1
-   status
-   
+   print_status $extraction
+
+   # Show message on error and quit import.
+   if [[ "$extraction" -ne 0 ]]; then
+      echo "~> Extraction of '$folderName.zip' failed ... quitting import in 5s."
+      sleep 5
+      exit
+   fi
+
    # Copy mandatory emulation config file and replace optional HOME placeholder.
    printf "~> Copy '$folderName.uae' -> $HOME/Emiga/public/configs... "
    cp $file/$folderName.uae $HOME/Emiga/public/configs > /dev/null 2>&1
