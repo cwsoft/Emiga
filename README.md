@@ -2,7 +2,7 @@
 This repo allows you to create an emulated Amiga environment (Emiga) on your Pi 4/400 on top of a clean [RPiOS-64 LXDE Desktop](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-64-bit) installation to host all your custom Amiga setups on a single SD card. The setup installs the required apt packages, [Amiberry v5.4 (SDL2)](https://github.com/BlitterStudio/amiberry), sets-up a Samba server (`\\emiga`) for easier data exchange and adds some desktop icons and a Amiga wallpaper to your RPiOS-64 LXDE Desktop.
 
 ![Screenshot](./assets/screenshots/emiga_env.png)
-Note: Image showing an older RPiOS LXDE desktop and Amiberry version
+Note: The image shows an older versions of thje RPiOS LXDE desktop and Amiberry
 
 **Please note:** To stay legal, no files under active copyright are contained in the default Emiga setup. It's up to you to setup your own Amiga Workbench or to port over any of your existing [AmiKit](https://www.amikit.amiga.sk) or [Pimiga](https://youtube.com/watch?v=KLJk8fTjQLw) setups to Emiga. The required steps are shown in
 **Section D**.
@@ -40,6 +40,7 @@ After the initial Emiga setup, you will find three icons on your Linux Desktop:
 The collage below shows my customized Emiga setup including my own EmigaOS 3.2.1 Workbench setup, ports of my purchased [AmiKitXE](https://www.amikit.amiga.sk) and [AmigaOS-32-SE](https://www.youtube.com/watch?v=p0AUsKNsFFo&list=PLPPMLgyyaMutm5waSlND4w-01SHVCbZwt&index=5) versions and a light version of [Pimiga 2](https://youtube.com/watch?v=KLJk8fTjQLw) without Musics and Demos on a single 32 GB SD card.
 
 ![Screenshot](./assets/screenshots/emiga_custom_setup_collage.png)
+Note: Image shows an older collage of my various Amiga workbench setups
 
 Sections below explain how to setup your own Workbench or port an existing [AmiKit](https://www.amikit.amiga.sk) or [Pimiga](https://youtube.com/watch?v=KLJk8fTjQLw) setup over to Emiga.
 
@@ -71,34 +72,43 @@ Icon={HOME}/Emiga/assets/icons/{EMULATION_PNG} -> e.g. amikit.png
 **Please note:** When starting a new or ported Amiga setup the very first time, the screen mode needs to be adapted for a nice user experience. In Pimiga2, the screen mode can be set via `System:Prefs/ScreenMode`. All Workbench setups include the `ScreenMode` tool to set a proper resultion like 32-bit 1920x1080 px.
 
 ### D2: Porting Pimiga to Emiga
-**Note:** It's assumed you already have [Pimiga 2](https://youtube.com/watch?v=KLJk8fTjQLw) up and running on your Pi4/400 incl. a stable internet connection.
+**Note:** It's assumed you already have [Pimiga 2](https://youtube.com/watch?v=KLJk8fTjQLw) or [Pimiga 3](https://www.youtube.com/watch?v=uw4GXLq2E9Q) up and running on your Pi4/400 incl. a stable internet connection.
 
 1. Format a fast 64-GB USB 3.2 stick with `exFat` on your computer
-2. Plug formated USB stick into your Pi, then boot Pimiga 2 from SD
+2. Plug formated USB stick into your Pi, then boot Pimiga from SD
 3. Quit Pimiga Scalos Workbench via `(F12 -> Quit)`
-4. Enter `ls /media` and check if mount-points: `usb` and `kick` exists
-5. Enter following commands to copy Pimiga 2 to your USB stick:
-   ```
-   # Install zip command (requires LAN/WLAN internet connection)
-   sudo apt install zip
-   
-   # Create Emiga folder structure on USB drive and copy over kickstart roms and config files
+4. Install zip command by entering `sudo apt install zip` first
+5. Follow steps below to copy Pimiga 2 or 3 to your USB stick:
+   ```  
+   # Pimiga 2: Create Emiga folder structure on USB drive and copy ROMs and config files
    sudo mkdir -p /media/usb/emiga/kickstarts /media/usb/emiga/emulations/pimiga
    sudo cp /media/kick/*.* /media/usb/emiga/kickstarts
    sudo cp ~/amiberry/conf/Pimiga.uae /media/usb/emiga/emulations/pimiga/pimiga.uae
    sudo sed -i "s#/media/kick/#{HOME}/Emiga/public/kickstarts/#" /media/usb/emiga/emulations/pimiga/pimiga.uae
    sudo sed -i "s#/home/pi/#{HOME}/Emiga/emulations/#" /media/usb/emiga/emulations/pimiga/pimiga.uae
    
+   # Pimiga 3: Create Emiga folder structure on USB drive and copy ROMs and config files
+   # Note: YOUR_USB refers to your plugged in USB device (adapt as needed)
+   sudo mkdir -p /media/pi/YOUR_USB/emiga/kickstarts /media/pi/YOUR_USB/emiga/emulations/pimiga
+   sudo cp /boot/kick/*.* /media/pi/YOUR_USB/emiga/kickstarts
+   sudo cp ~/amiberry/conf/Pimiga3.uae /media/usb/emiga/emulations/pimiga/pimiga.uae
+   sudo sed -i "s#/boot/kick/#{HOME}/Emiga/public/kickstarts/#" /media/pi/YOUR_USB/emiga/emulations/pimiga/pimiga.uae
+   sudo sed -i "s#/home/pi/#{HOME}/Emiga/emulations/#" /media/pi/YOUR_USB/emiga/emulations/pimiga/pimiga.uae
+   
    # Create pimiga.zip archive with all folders and files from ~/pimiga (~ 35 GB)
-   # My Pimiga-Light setup (~ 11 GB) consists of pimiga/disks/[System/|Work/|Games/] with adjusted System/S/user-startup
+   # My light-setup (~ 11 GB) consists of pimiga/disks/[System/|Work/|Games/] with modified System/S/user-startup
    # Note: Ziping 35 GB can easily take 2 hours or more so go out for a walk
    cd
+   # Pimiga 2:
    sudo zip -r /media/usb/emiga/emulations/pimiga/pimiga.zip pimiga/*
+   
+   # Pimiga 3:
+   sudo zip -r /media/pi/YOUR_USB/emiga/emulations/pimiga/pimiga.zip pimiga/*
    ```
 6. Shutdown your Pi via `sudo shutdown now`, eject Pimiga SD-Card and plug in Emiga SD-Card, then reboot
 7. Copy a nice PNG icon (e.g. PI-symbol) to the USB stick: `emiga/emulations/pimiga/pimiga.png`
-8. Run Emigas `ImportWizard` and import Pimiga 2 from the prepared USB stick
-9. Click the desktop icon from Step 7 and adjust screen mode on first start via `System:Prefs\ScreenMode`
+8. Run Emigas `ImportWizard` and import Pimiga 2 or 3 from the prepared USB stick
+9. Click  desktop icon from Step 7 and adjust screen mode on first start via `System:Prefs\ScreenMode`
 
 ### D3: Setup USB Stick for the ImportWizard
 As outlined in **Section D2**, porting over any existing Amiga setup to Emiga is just a matter of copying some files and folders to an empty USB stick and to adapt some pathes in the WinUAE/Amiberry configuration files. The Emiga *ImportWizard* expects a certain file structure on your USB stick in order to recognize your setup as outlined below:
