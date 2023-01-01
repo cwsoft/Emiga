@@ -1,14 +1,14 @@
 # Emiga - Emulated Amiga for Pi4/400
-This repo allows you to create an emulated Amiga environment (Emiga) on your Pi 4/400 on top of a clean [RPiOS-64 LXDE Desktop](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-64-bit) installation to host all your custom Amiga setups on a single SD card. The setup installs the required apt packages, [Amiberry v5.4 (SDL2)](https://github.com/BlitterStudio/amiberry), sets-up a Samba server (`\\emiga`) for easier data exchange and adds some desktop icons and a Amiga wallpaper to your RPiOS-64 LXDE Desktop.
+This repo allows you to create an emulated Amiga environment (Emiga) on your Pi 4/400 on top of a clean [RPiOS-64 LXDE Desktop](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-64-bit) installation to host all your custom Amiga setups on a single SD card. The setup installs the required apt packages, [Amiberry v5.5 (SDL2)](https://github.com/BlitterStudio/amiberry), sets-up a Samba server (`\\emiga`) for easier data exchange and adds some desktop icons and a Amiga wallpaper to your RPiOS-64 LXDE Desktop.
 
 ![Screenshot](./assets/screenshots/emiga_env.png)
-Note: The image shows an older versions of thje RPiOS LXDE desktop and Amiberry
+Note: Image above shows older versions of RPiOS LXDE and Amiberry
 
 **Please note:** To stay legal, no files under active copyright are contained in the default Emiga setup. It's up to you to setup your own Amiga Workbench or to port over any of your existing [AmiKit](https://www.amikit.amiga.sk) or [Pimiga](https://youtube.com/watch?v=KLJk8fTjQLw) setups to Emiga. The required steps are shown in
 **Section D**.
 
 ## A: Prerequisites
-- Pi4/400 with a fast SD-card (at least 32 GB, for porting Pimiga2 use 64 GB)
+- Pi4/400 with a fast SD-card (at least 32 GB, 64 GB if you want to port Pimiga 2/3)
 - Preinstalled [Raspberry Pi OS LXDE Desktop](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-64-bit) (64-bit, Debian Bullseye)
 
 ## B: Setup RPiOS-64 LXDE Desktop
@@ -33,16 +33,16 @@ git clone https://github.com/cwsoft/Emiga.git
 ```
 ## D: Customize your Emiga Setup
 After the initial Emiga setup, you will find three icons on your Linux Desktop:
-- **Amiberry**: Open [Amiberry v5.4 (SDL2)](https://github.com/BlitterStudio/amiberry) GUI to create/modify your Amiga setups
+- **Amiberry**: Open [Amiberry v5.5 (SDL2)](https://github.com/BlitterStudio/amiberry) GUI to create/modify your Amiga setups
 - **StartManager**: Define setup started after boot-up (Default: LXDE Linux Desktop)
 - **ImportWizard**: Import custom ROMs and setups from USB (e.g. Workbench 3.x, AmiKit, Pimiga)
 
-The collage below shows my customized Emiga setup including my own EmigaOS 3.2.1 Workbench setup, ports of my purchased [AmiKitXE](https://www.amikit.amiga.sk) and [AmigaOS-32-SE](https://www.youtube.com/watch?v=p0AUsKNsFFo&list=PLPPMLgyyaMutm5waSlND4w-01SHVCbZwt&index=5) versions and a light version of [Pimiga 2](https://youtube.com/watch?v=KLJk8fTjQLw) without Musics and Demos on a single 32 GB SD card.
+The collage below shows my Emiga setup with my custom EmigaOS 3.2.1 Workbench, ports of my purchased [AmiKitXE](https://www.amikit.amiga.sk) and [AmigaOS-32-SE](https://www.youtube.com/watch?v=p0AUsKNsFFo&list=PLPPMLgyyaMutm5waSlND4w-01SHVCbZwt&index=5) versions and a light version of [Pimiga 2](https://youtube.com/watch?v=KLJk8fTjQLw) without Musics and Demos on a single 32 GB SD card.
 
 ![Screenshot](./assets/screenshots/emiga_custom_setup_collage.png)
-Note: Image shows an older collage of my various Amiga workbench setups
+Note: Image above shows an older collage of my various Amiga workbench setups
 
-Sections below explain how to setup your own Workbench or port an existing [AmiKit](https://www.amikit.amiga.sk) or [Pimiga](https://youtube.com/watch?v=KLJk8fTjQLw) setup over to Emiga.
+Sections below explains how to setup your own Workbench or port an existing [AmiKit](https://www.amikit.amiga.sk) or [Pimiga](https://youtube.com/watch?v=KLJk8fTjQLw) setup over to Emiga.
 
 ### D1: Create your own Workbench Setup
 To start off, some legal Amiga kickstart roms and workbench files are needed. [Amiga Forever](https://www.amigaforever.com) from Cloanto or [AmigaOS 3.2.x](https://www.hyperion-entertainment.com) from Hyperion contain all files needed to setup your own customized Amiga Workbench with all your favorite tools and games you enjoyed 30 years ago. It's assumed you know how to setup a Workbench. If your knowledge is a bit rusty, you can check out some [Youtube guides](https://www.youtube.com/watch?v=jJG8-KG9tLI) first.
