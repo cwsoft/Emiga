@@ -16,7 +16,7 @@ fi
 
 ## Global variables to define the Amiberry binary file to download.
 GH_URL="https://github.com/BlitterStudio/amiberry/releases/download"
-AMIBERRY_VERSION="v5.5"
+AMIBERRY_VERSION="v5.5.1"
 AMIBERRY_BINARY="amiberry-$AMIBERRY_VERSION-rpi4-sdl2-64bit-debian.zip"
 AMIBERRY_URL="$GH_URL/$AMIBERRY_VERSION/$AMIBERRY_BINARY"
 
