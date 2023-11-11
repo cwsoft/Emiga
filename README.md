@@ -1,5 +1,5 @@
 # Emiga - Emulated Amiga for Pi4/400
-This repo allows you to create an emulated Amiga environment (Emiga) on your Pi 4/400 on top of a clean [RPiOS-64 LXDE Desktop](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-64-bit) installation to host all your custom Amiga setups on a single SD card. The setup installs the required apt packages, [Amiberry v5.6.2](https://github.com/BlitterStudio/amiberry), sets-up a Samba server (`\\emiga`) for easier data exchange and adds some desktop icons and a Amiga wallpaper to your RPiOS-64 LXDE Desktop.
+This repo allows you to create an emulated Amiga environment (Emiga) on your Pi 4/400 on top of a clean [RPiOS-64 LXDE Desktop (Debian Bullseye)](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-64-bit) installation to host all your custom Amiga setups on a single SD card. The setup installs the required apt packages, [Amiberry v5.6.2](https://github.com/BlitterStudio/amiberry), sets-up a Samba server (`\\emiga`) for easier data exchange and adds some desktop icons and a Amiga wallpaper to your RPiOS-64 LXDE Desktop.
 
 ![Screenshot](./assets/screenshots/emiga_env.png)
 Note: Image above shows older versions of RPiOS LXDE and Amiberry
