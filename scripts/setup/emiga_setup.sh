@@ -17,7 +17,7 @@ exitScriptIfInvokedByRoot
 
 ## Main script starts here.
 clear
-header "Emiga main setup script (v0.6.0)" "="
+header "Emiga main setup script (v1.0.0)" "="
 echo "Executing Emiga main setup script. Time for some coffee."
 
 ## Install required apt packages.

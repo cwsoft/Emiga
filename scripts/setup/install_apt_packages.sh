@@ -25,6 +25,6 @@ sudo apt-get -y install bash grep sed samba samba-common-bin p7zip-full unzip wh
 status
 
 ## Install apt packages required by Amiberry
-printf "~> Amiberry: 'libsdl2, libsdl2-ttf, libsdl2-image, flac, mpg123, libmpeg2'... "
-sudo apt-get -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 > /dev/null 2>&1
+printf "~> Amiberry: 'libsdl2, libsdl2-ttf, libsdl2-image, flac, mpg123, libmpeg2, libserialport0'... "
+sudo apt-get -y install libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 libserialport0 > /dev/null 2>&1
 status

@@ -1,13 +1,13 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; EMIGA DEFAULT AMIBERRY V5.1 CONFIG FILE
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;+ AMIBERRY V5.6.2 DEFAULT CONFIG FILE USED FOR EMIGA
+;+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Quickstart=1
 read_config_descriptions=yes
 write_logfile=no
 default_line_mode=0
 rctrl_as_ramiga=yes
 gui_joystick_control=yes
-use_sdl2_render_thread=yes
+use_sdl2_render_thread=no
 default_multithreaded_drawing=yes
 input_default_mouse_speed=100
 input_keyboard_as_joystick_stop_keypresses=no
@@ -32,6 +32,7 @@ default_joystick_deadzone=33
 default_retroarch_quit=yes
 default_retroarch_menu=yes
 default_retroarch_reset=no
+default_retroarch_vkbd=no
 default_controller1=joy0
 default_controller2=joy1
 default_controller3=
@@ -45,6 +46,15 @@ default_whd_writecache=no
 default_whd_quit_on_exit=yes
 disable_shutdown_button=no
 allow_display_settings_from_xml=yes
+default_soundcard=0
+default_vkbd_enabled=no
+default_vkbd_hires=no
+default_vkbd_exit=no
+default_vkbd_language=US
+default_vkbd_style=Warm
+default_vkbd_transparency=0
+default_vkbd_toggle=guide
+default_retroarch_vkbd=no
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; EMIGA SPECIFIC PATH SETTINGS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
